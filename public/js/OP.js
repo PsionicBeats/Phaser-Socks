@@ -10,7 +10,8 @@
     }
     return parsedMessage;
   };
-
+  
+// If only returning, can omit blocks :D
   const create = (OP, payload) => JSON.stringify({
     OP,
     payload,

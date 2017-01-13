@@ -57,7 +57,16 @@ function clientHandleOp( msg ){
       //   fore every player that is NOT the current player (this)
 
       // send OP:MOVE_TO sending { username, position }
-      // BROADCAST THIS { username : 'Link', position : { x : '', y : '' }}
+      // BROADCAST THIS { OP : "MOVE_TO", payload : { username : 'Link', position : { x : '', y : '' }}}
+      //    use sendOp( ... )
+
+      let position = msg.payload;
+
+      players.forEach( (player, playerUsername) => {
+        if(playerUsername !== this.username){
+          player.sendOp(OP.MOVE_TO, { username: this.username, position });
+        }
+      });
 
       break;
     default:

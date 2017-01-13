@@ -7,7 +7,7 @@ const { Server : WebSocketServer } = require('ws');
 const server = require('http').createServer();
 const wss = new WebSocketServer({ server });
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 // "username" => client
 const players = new Map();

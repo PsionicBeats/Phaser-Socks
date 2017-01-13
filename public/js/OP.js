@@ -10,6 +10,7 @@
     }
     return parsedMessage;
   };
+  
 // If only returning, can omit blocks :D
   const create = (OP, payload) => JSON.stringify({
     OP,
@@ -20,6 +21,9 @@
    * OP codes
    */
   const ERROR = 'ERROR';
+  const REGISER = 'REGISTER';
+  const REGISTERACK = 'REGISTERACK';
+  const CHAT = 'CHAT';
 
   /*
    * the module
@@ -28,6 +32,9 @@
     create,
     parse,
     ERROR,
+    REGISER,
+    REGISTERACK,
+    CHAT,
   };
 
 
